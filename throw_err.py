@@ -21,25 +21,26 @@ if len(sys.argv) != 2:
 error_type = sys.argv[1]
 
 if error_type == "assertion":
-    raise AssertionError
+    assert(0 == 1)
 elif error_type == "io":
-    raise IOError
+    print('\n'.join(open('asdfasdfsdfsd', 'r').lines()))
 elif error_type == "import":
-    raise ImportError
+    import superdupercooperlooper
 elif error_type == "index":
-    raise IndexError
+    print([1, 2, 3][3])
 elif error_type == "key":
-    raise KeyError
+    {'cow':'moo', 'cat':'meow', 'dog':'woof'}['fox'] # What does the fox say?
 elif error_type == "name":
-    raise NameError
+    print(superduper)
 elif error_type == "os":
-    raise OSError
+    import os
+    os.chdir('/bin/bin/bin/bin/bin/bin/bin/bin')
 elif error_type == "type":
-    raise TypeError
+    print(1 + "asdf")
 elif error_type == "value":
-    raise ValueError
+    print(int('asdf'))
 elif error_type == "zerodivision":
-    raise ZeroDivisionError
+    1 / 0
 else:
     sys.stderr.write("Sorry, not able to throw a(n) ")
     sys.stderr.write(error_type + " error\n")
