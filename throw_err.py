@@ -5,6 +5,11 @@
 
 import sys
 
+class TeddyError(Exception):
+        def __init__(self, message, some_param):
+            super(TeddyError, self).__init__(message)
+            self.some_param = some_param
+
 def print_usage():
     """Print usage and exit"""
     sys.stderr.write("usage: python raise_err.py <error type>\n")
@@ -41,6 +46,8 @@ elif error_type == "value":
     print(int('asdf'))
 elif error_type == "zerodivision":
     1 / 0
+elif error_type == "teddy":
+    raise TeddyError("something horrible happened", 125)
 else:
     sys.stderr.write("Sorry, not able to throw a(n) ")
     sys.stderr.write(error_type + " error\n")
