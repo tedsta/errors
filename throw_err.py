@@ -16,7 +16,7 @@ def print_usage():
     sys.stderr.write("available errors: \n")
     sys.stderr.write("\tassertion, io, import, index\n")
     sys.stderr.write("\tkey, name, os, type, value,\n")
-    sys.stderr.write("\tzerodivision\n")
+    sys.stderr.write("\tzerodivision, teddy\n")
     sys.exit()
 
 # Check args
